@@ -1,5 +1,4 @@
 # A fuck ton of linux syscalls  
----
 Exactly what it sounds like. I've tried to keep them commented
 enough to be easily understood, so they could be used as an example.  
 ## Why though?  
