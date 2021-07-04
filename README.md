@@ -3,6 +3,6 @@ Exactly what it sounds like. I've tried to keep them commented
 enough to be easily understood, so they could be used as an example.  
 ## Why though?  
 As much of a humble and selfless individual as I am, I am not doing this
-as an example for others. I personally enjoy linux as a development platoform,
+as a tutorial for others. I personally enjoy linux as a development platoform,
 and so I think that understanding it's syscalls and doing my best to sift through
 it's kernel could be some very useful experience
