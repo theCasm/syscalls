@@ -46,7 +46,7 @@ getfile:	mov	rax, 1
 
 	mov	rax, 2
 	mov	rdi, filename
-	mov	rsi, 2		; read and write flag
+	mov	rsi, 1026		; read and write flag, append flag
 	syscall
 
 	mov	[fd], rax
@@ -69,6 +69,8 @@ getfile:	mov	rax, 1
 	mov	rsi, writedata
 	syscall
 
+	mov	rax, 1
+	mov	rdi, 1
 	mov	rsi, fsize
 	mov	rdx, flen
 	syscall

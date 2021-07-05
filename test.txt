@@ -1,3 +1,5 @@
 This is some text
 I hope my program doesn't get rid of it
 That would be very sad :(
+I am a friendly program
+as a friendly program, I respect basic boundries
