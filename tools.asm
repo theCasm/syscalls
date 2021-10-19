@@ -34,38 +34,45 @@ atoiend:	pop	rdx
 	pop	rcx
 	ret
 
-
+; this fucks up a lot of registers
+; printNum(int num)
 printNum:	
-	mov	rax, rdi
-	mov	rbx, 10
-	xor	rcx, rcx
+	mov	rax, rdi		; we will need it in rAX for division
+	mov	rbx, 10		; hardcoding base 10
+	xor	rcx, rcx		
 
-pnloop:	xor	rdx, rdx
-	div	rbx
+pnloop:	xor	rdx, rdx		; without this you get a bug which hurts
+	div	rbx		; divide by ten
 	
-	add	dl, '0'
-	mov	[rcx + strbuffer], dl
+	add	dl, '0'		; convert to ascii char
+	mov	[rcx + strbuffer], dl	; store and increment loop
 	inc	rcx
 
-	cmp	rax, 0
+	cmp	rax, 0		; if number is zero, we have hit the end
 	jg	pnloop
 
 	xor	rdx, rdx
-	mov	r8, rcx
-	inc	r8
-	mov	byte[rcx + strbuffer], 0xA
+	mov	r8, rcx		; store length of string as 1 + chars (for newline)
+	inc	r8		
+	mov	byte[rcx + strbuffer], 0xA ; assume mewline as end char
 
+	; str is currently backwards, so we need to reverse it
 pnloop2:	dec	rcx
 	
 	mov	al, [rcx + strbuffer]
 	mov	bl, [rdx + strbuffer]
 
-	xor	al, bl
-	xor	bl, al
-	xor	al, bl
+	; swap chars
+	;mov	sil, al
+	;mov	al, bl
+	;mov	bl, sil
+	; xor swaps used to be used, I believe they are slower on modern cpus
+	; xor	al, bl
+	; xor	bl, al
+	; xor	al, bl
 
-	mov	[rcx + strbuffer], al
-	mov	[rdx + strbuffer], bl
+	mov	[rcx + strbuffer], bl
+	mov	[rdx + strbuffer], al
 
 	inc	rdx
 	
