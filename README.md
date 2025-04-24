@@ -1,8 +1,7 @@
-# A fuck ton of linux syscalls  
+# A metric ton of linux syscalls  
 Exactly what it sounds like. I've tried to keep them commented
-enough to be easily understood, so they could be used as an example.  
-## Why though?  
-As much as I think of myself as the most humble and selfless person to grace the earth with their presence, I am not doing this
-primarily as a tutorial for others. I personally enjoy linux as a development platform,
-and so I think that understanding it's syscalls and doing my best to sift through
-it's kernel could be very useful experience
+enough to be somewhat understood, given that assembly is the way that it is.
+## Why though?
+ - assembly practice
+ - unix-style systems are prevalent for a reason, it's good to know how their user-kernal interface works.
+ - doing is understanding, and I'd like to understand how "nicer" interfaces like the C standard library work
